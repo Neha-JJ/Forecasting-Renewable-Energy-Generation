@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Predicting the Wind Energy Generation</h1>
+            <p class="subtitle">Enter a time frame to generate future predictions</p>
+            <p class="note">Note: Last recorded date is 01/04/2020 for the dataset. The further in future we predict, the less the accuracy.</p>
+        </header>
+        
+        <form method="POST" class="prediction-form">
+            <label for="from-date">From date:</label>
+            <input type="text" id="from-date" name="fd" placeholder="yyyy-mm-dd">
+            
+            <label for="to-date">To date:</label>
+            <input type="text" id="to-date" name="td" placeholder="yyyy-mm-dd">
+            
+            <button type="submit">Predict</button>
+        </form>
+
+        <div class="output">
+            <p>{{ name }}</p>
+            <img src="{{ url_for('static', filename='output.png') }}" alt="Chart" class="chart-image">
+        </div>
+    </div>
+</body>
+</html>
+
+</html>
